@@ -110,8 +110,8 @@ Production Notes     — Generation order, consistency checklist, tool recommend
 
 | Stage | Tools |
 |-------|-------|
-| Start frame generation | Midjourney, FLUX Pro, Stable Diffusion XL |
-| Video animation | Runway Gen-3, Kling 1.5, Minimax, Sora |
+| Start frame generation | Midjourney, Nanobanana Pro, FLUX Pro, Stable Diffusion XL |
+| Video animation | Veo, Runway Gen-3, Kling 1.5, Minimax, Sora |
 | Editing & assembly | DaVinci Resolve, Premiere Pro, CapCut |
 | Audio | Suno, ElevenLabs, Freesound |
 

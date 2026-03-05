@@ -1,6 +1,6 @@
 # AI Film Production Pipeline — Claude Skills
 
-A complete AI filmmaking skill suite for [Claude Code](https://claude.com/claude-code). Four interconnected skills that turn Claude into an AI film director, generating structured prompts for AI video tools like Runway, Kling, Sora, and Pika.
+A complete AI filmmaking skill suite for [Claude Code](https://claude.com/claude-code). Four interconnected skills that turn Claude into an AI film director, generating structured prompts for AI video tools like Veo, Runway, Kling, Sora, and Pika.
 
 Built on real filmmaking principles — not prompt tricks.
 

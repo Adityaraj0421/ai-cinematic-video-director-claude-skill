@@ -1,0 +1,22 @@
+{
+  "name": "ai-film-production",
+  "version": "1.0.0",
+  "description": "AI Film Production Pipeline — 4 interconnected skills that turn Claude into an AI film director. Generates structured, production-ready prompts for AI video tools like Runway, Kling, Sora, and Pika.",
+  "author": {
+    "name": "Aditya Raj",
+    "url": "https://github.com/Adityaraj0421"
+  },
+  "repository": "https://github.com/Adityaraj0421/ai-cinematic-video-director-claude-skill",
+  "license": "MIT",
+  "keywords": [
+    "ai-video",
+    "filmmaking",
+    "cinematography",
+    "runway",
+    "kling",
+    "sora",
+    "prompt-engineering",
+    "character-design",
+    "storyboard"
+  ]
+}

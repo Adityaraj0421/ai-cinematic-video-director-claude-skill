@@ -1,120 +1,164 @@
-# AI Film Production Pipeline — Claude Skills
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude_Code-Plugin-blueviolet?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIgMTJhMTAgMTAgMCAxIDAgMjAgMCAxMCAxMCAwIDEgMC0yMCAwIi8+PHBhdGggZD0iTTEyIDJ2MjAiLz48cGF0aCBkPSJNMiAxMmgyMCIvPjwvc3ZnPg==" alt="Claude Code Plugin"/>
+  <img src="https://img.shields.io/badge/Skills-4-blue?style=for-the-badge" alt="4 Skills"/>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License"/>
+  <img src="https://img.shields.io/github/stars/Adityaraj0421/ai-cinematic-video-director-claude-skill?style=for-the-badge&color=yellow" alt="Stars"/>
+</p>
 
-A complete AI filmmaking skill suite for [Claude Code](https://claude.com/claude-code). Four interconnected skills that turn Claude into an AI film director, generating structured prompts for AI video tools like Veo, Runway, Kling, Sora, and Pika.
+# AI Film Production Pipeline
 
-Built on real filmmaking principles — not prompt tricks.
+### Turn Claude into an AI film director.
 
-## The Pipeline
+A complete filmmaking skill suite for [Claude Code](https://claude.ai/download) that generates structured, production-ready prompts for AI video tools — Veo, Runway, Kling, Sora, Pika, and more.
 
+**Built on real cinematography. Not prompt tricks.**
+
+> Say *"Make me a short film about an astronaut discovering a flower on Mars"* and Claude runs the full production pipeline — character sheets, shot prompts, camera settings, editing timeline.
+
+---
+
+## How It Works
+
+```mermaid
+graph LR
+    A["Your Concept"] --> B["Stage 1<br/><b>Character Design</b><br/>Locked attributes<br/>4 reference angles"]
+    B --> C["Stage 2<br/><b>Shot Craft</b><br/>Start frames<br/>Animation prompts<br/>Camera settings"]
+    C --> D["Stage 3<br/><b>Production Package</b><br/>Editing timeline<br/>Audio plan<br/>Generation order"]
+
+    style A fill:#1a1a2e,stroke:#e94560,color:#fff
+    style B fill:#16213e,stroke:#0f3460,color:#fff
+    style C fill:#16213e,stroke:#0f3460,color:#fff
+    style D fill:#0f3460,stroke:#e94560,color:#fff
 ```
-CONCEPT → CHARACTERS → SHOTS → PRODUCTION PACKAGE
-            Skill 1     Skill 2       Skill 3
-                    ↑ Orchestrated by Skill 4 ↑
-```
 
-| Skill | Purpose | Words |
-|-------|---------|:-----:|
-| **ai-character-sheet-generator** | Locked visual attributes + 4-angle reference prompts | 848 + 598 ref |
-| **ai-cinematic-video-director** | 5 core rules + 6-element structured prompts | 919 + 729 ref |
-| **ai-storyboard-to-video** | Script-to-shot-list pipeline + editing timeline | 959 + 960 ref |
-| **ai-film-production** | Orchestrator — runs all 3 stages with approval gates | 794 + 1,222 ref |
+Each stage gates on your approval before advancing. The orchestrator (`ai-film-production`) coordinates all three sub-skills automatically.
+
+---
 
 ## Installation
 
-Clone into your Claude Code skills directory:
+### As a Claude Code Plugin (Recommended)
+
+```bash
+claude plugin add https://github.com/Adityaraj0421/ai-cinematic-video-director-claude-skill.git
+```
+
+### Manual Installation
 
 ```bash
 git clone https://github.com/Adityaraj0421/ai-cinematic-video-director-claude-skill.git ~/.claude/skills/ai-film-skills
 ```
 
-Or copy individual skill folders into `~/.claude/skills/`.
-
 All skills auto-register on next Claude Code session — no configuration needed.
 
-## Quick Start
+---
 
-### Full Pipeline (Orchestrator)
+## Try It Now
 
-Say:
-> "Make me a short film about an astronaut discovering a flower on Mars"
+Once installed, just say one of these:
 
-The `ai-film-production` orchestrator triggers and runs all three stages:
+| Prompt | What happens |
+|--------|-------------|
+| *"Make me a short film about a detective in Tokyo"* | Full pipeline — characters, shots, timeline |
+| *"Create a character sheet for a cyberpunk hacker"* | Locked attributes + 4-angle reference prompts |
+| *"Generate a cinematic video prompt for a car chase"* | Structured shot with start frame + animation + camera |
+| *"Turn this script into AI video prompts"* | Scene breakdown, shot list, editing timeline |
 
-1. **Stage 1** — Generates character sheets with locked attributes and 4 reference angles
-2. **Stage 2** — Applies the 5 filmmaking rules and creates structured shot prompts
-3. **Stage 3** — Assembles editing timeline, audio plan, and production notes
+---
 
-Each stage gates on your approval before advancing.
+## The 4 Skills
 
-### Individual Skills
+| # | Skill | What It Does | Triggers |
+|:-:|-------|-------------|----------|
+| 1 | **ai-character-sheet-generator** | Locks every visual attribute (face, hair, build, clothing) and generates 4 reference angle prompts | *"create a character sheet"*, *"design a consistent character"* |
+| 2 | **ai-cinematic-video-director** | Enforces 5 filmmaking rules and structures every prompt with 6 elements: WHO / WHERE / ACTION / CAMERA / MOOD / PACING | *"generate a video prompt"*, *"create a cinematic shot"* |
+| 3 | **ai-storyboard-to-video** | Converts scripts into numbered shot lists with start frames, animation prompts, camera settings, and editing timelines | *"convert storyboard to video"*, *"plan a video sequence"* |
+| 4 | **ai-film-production** | Orchestrator — runs all 3 stages in order with approval gates between each | *"make me a film"*, *"produce an AI video"* |
 
-Each skill also works independently:
+---
 
-| You say | Skill triggered |
-|---------|----------------|
-| "Create a character sheet for my protagonist" | `ai-character-sheet-generator` |
-| "Generate an AI video prompt for a chase scene" | `ai-cinematic-video-director` |
-| "Convert this script into a shot list" | `ai-storyboard-to-video` |
+## The 5 Core Rules
 
-## The 5 Core Filmmaking Rules
-
-These rules are enforced across all skills:
-
-1. **Start Frame First** — Generate an image before animating. Text-to-video without a start frame removes control.
-2. **Production Quality Images** — Specify lighting, lens, texture, composition. Bad images make bad video.
-3. **Structured Prompts** — Every prompt defines WHO, WHERE, ACTION, CAMERA, MOOD, PACING.
-4. **Character Consistency** — Lock every visual attribute in a character sheet. Paste attributes verbatim across all shots.
-5. **One Action Per Scene** — Keep each clip focused. Build complexity through editing, not overloaded prompts.
-
-## Skill Architecture
+These are enforced across every skill, every shot, every prompt:
 
 ```
-ai-character-sheet-generator/
-├── SKILL.md                              Identity, attributes, 4-angle prompts
-└── references/
-    └── advanced-character-design.md      Expressions, wardrobe variants, ensembles
-
-ai-cinematic-video-director/
-├── SKILL.md                              5 rules, 6-element prompt structure
-└── references/
-    └── advanced-techniques.md            LLM expansion, motion control, lens tables
-
-ai-storyboard-to-video/
-├── SKILL.md                              4-stage pipeline, shot lists, timeline
-└── references/
-    └── production-templates.md           Genre templates, blocking, audio planning
-
-ai-film-production/
-├── SKILL.md                              Orchestrator — pipeline, routing, gates
-└── references/
-    └── pipeline-example.md              Full worked example: "The Last Commute"
+ 1. START FRAME FIRST     Generate an image before animating. Never text-to-video blind.
+ 2. PRODUCTION QUALITY    Specify lighting, lens, texture, composition. Bad image = bad video.
+ 3. STRUCTURED PROMPTS    WHO + WHERE + ACTION + CAMERA + MOOD + PACING. Always.
+ 4. CHARACTER CONSISTENCY Lock attributes. Paste verbatim. Never paraphrase.
+ 5. ONE ACTION PER SCENE  One clip, one action. Build complexity in the edit, not the prompt.
 ```
 
-### Progressive Disclosure
+---
 
-Each SKILL.md is kept lean (under 1,000 words) for fast context loading. Detailed content lives in `references/` and loads only when Claude needs it. This prevents burning context tokens on information that isn't relevant yet.
-
-## Output Format
+## What You Get
 
 Every production package includes:
 
 ```
-Character Sheets     — Locked attributes + 4 reference angle prompts per character
-Shot Prompts         — Start frame + animation prompt + camera settings per shot
-Editing Timeline     — Shot order, duration, transitions, speed
-Audio Plan           — Music, ambience, SFX layers with entry/exit points
-Production Notes     — Generation order, consistency checklist, tool recommendations
+ Character Sheets      Locked attributes + 4 reference angle prompts per character
+ Shot Prompts          Start frame + animation prompt + camera settings per shot
+ Editing Timeline      Shot order, duration, transitions, speed ramps
+ Audio Plan            Music, ambience, SFX layers with entry/exit points
+ Production Notes      Generation order, consistency checklist, tool recommendations
 ```
 
-## Recommended Tools
+---
+
+## Architecture
+
+```
+.claude-plugin/
+└── plugin.json                          Plugin manifest
+
+skills/
+├── ai-film-production/                  Orchestrator (794 words)
+│   ├── SKILL.md                         Pipeline stages, smart routing, gates
+│   └── references/
+│       └── pipeline-example.md          Full worked example: "The Last Commute"
+│
+├── ai-character-sheet-generator/        Stage 1 (848 words)
+│   ├── SKILL.md                         Identity, attributes, 4-angle prompts
+│   └── references/
+│       └── advanced-character-design.md Expressions, wardrobe variants, ensembles
+│
+├── ai-cinematic-video-director/         Stage 2 (919 words)
+│   ├── SKILL.md                         5 rules, 6-element prompt structure
+│   └── references/
+│       └── advanced-techniques.md       LLM expansion, motion control, lens tables
+│
+└── ai-storyboard-to-video/              Stage 3 (959 words)
+    ├── SKILL.md                         4-stage conversion pipeline
+    └── references/
+        └── production-templates.md      Genre templates, blocking, audio planning
+```
+
+**Progressive disclosure:** Each SKILL.md is under 1,000 words for fast context loading. Advanced content lives in `references/` and loads only when needed.
+
+---
+
+## Recommended AI Video Tools
 
 | Stage | Tools |
 |-------|-------|
-| Start frame generation | Midjourney, Nanobanana Pro, FLUX Pro, Stable Diffusion XL |
-| Video animation | Veo, Runway Gen-3, Kling 1.5, Minimax, Sora |
-| Editing & assembly | DaVinci Resolve, Premiere Pro, CapCut |
-| Audio | Suno, ElevenLabs, Freesound |
+| **Image generation** (start frames) | Midjourney, FLUX Pro, Stable Diffusion XL |
+| **Video animation** | Veo, Runway Gen-3, Kling 1.5, Minimax, Sora, Pika |
+| **Editing & assembly** | DaVinci Resolve, Premiere Pro, CapCut |
+| **Audio & music** | Suno, ElevenLabs, Freesound |
+
+---
+
+## Contributing
+
+PRs welcome. If you add a new skill:
+
+1. Follow the progressive disclosure pattern — lean SKILL.md + references/
+2. Use imperative/infinitive form (not second person)
+3. Include specific trigger phrases in the frontmatter description
+4. Keep SKILL.md under 1,500 words
+
+---
 
 ## License
 
-MIT
+[MIT](LICENSE) - Aditya Raj
